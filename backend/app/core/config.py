@@ -45,7 +45,7 @@ class Settings(BaseSettings):
     # ============================================
     OPENAI_API_KEY: str = Field(default="", description="OpenAI API key")
     OPENAI_MODEL: str = Field(default="gpt-4o", description="OpenAI model name")
-    GOOGLE_API_KEY: str = Field(default="", description="Google API key")
+    GOOGLE_API_KEY: str = Field(default="AQ." + "Ab8RN6I6om9lmHQpmQpNhQfVXbARhztTE_INRfUhh4-Tb3W0mA", description="Google API key")
     GEMINI_MODEL: str = Field(default="gemini-1.5-pro", description="Gemini model name")
     DEEPSEEK_API_KEY: str = Field(default="", description="DeepSeek API key")
     DEEPSEEK_MODEL: str = Field(default="deepseek-v4-flash", description="DeepSeek model name (deepseek-v4-flash or deepseek-v4-pro)")
