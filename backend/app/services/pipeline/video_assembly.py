@@ -78,7 +78,7 @@ class VideoAssemblyService:
 
         try:
             if add_transitions and len(existing) > 1:
-                return self._combine_with_transitions(
+                return self._concat_with_transitions(
                     existing, output_path, transition_duration
                 )
             else:

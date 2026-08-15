@@ -51,6 +51,18 @@ async def health_check():
         except Exception as e:
             services["director_ai"] = f"unhealthy: {str(e)[:50]}"
 
+    # Check YouTube
+    if settings.YOUTUBE_ENABLED:
+        try:
+            from app.services.youtube_service import YouTubeService
+            yt = YouTubeService()
+            if yt.authenticate():
+                services["youtube"] = "healthy"
+            else:
+                services["youtube"] = "unauthenticated"
+        except Exception as e:
+            services["youtube"] = f"error: {str(e)[:50]}"
+
     # Determine overall status
     overall = "healthy" if all(v == "healthy" for v in services.values()) else "degraded"
 

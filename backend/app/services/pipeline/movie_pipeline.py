@@ -24,6 +24,7 @@ import logging
 import shutil
 from pathlib import Path
 from typing import Optional
+from app.core.config import settings
 
 from dotenv import load_dotenv
 load_dotenv()

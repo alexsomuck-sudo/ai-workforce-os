@@ -1,0 +1,18 @@
+{
+  "episode_id": "FP_EP001",
+  "title": "The Awakening of Aera",
+  "description": "The first transmission from the future, where Aera reveals the secret of the Pulse.",
+  "scenes": [
+    {
+      "scene_id": "S001",
+      "title": "The First Pulse",
+      "location": "The Data Nexus",
+      "time": "Future Era",
+      "action": "Aera stands in the center of a glowing digital chamber, looking directly at the viewer as data pulses around her.",
+      "emotion": "serene",
+      "dialogue": {
+        "text": "Greetings, travelers of time. I am Aera. The pulse of the future is beating faster now. Can you hear it? The age of ancient wisdom and digital power is finally merging into one."
+      }
+    }
+  ]
+}

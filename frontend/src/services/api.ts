@@ -70,6 +70,19 @@ export const api = {
 
   directorEpisodes: (): Promise<any> =>
     request<any>('/agents/director/episodes/ep001'),
+
+  // Pipeline
+  pipelineStatus: (): Promise<any> => request<any>('/pipeline/status'),
+  runPipeline: (data: any): Promise<any> =>
+    request<any>('/pipeline/run', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    }),
+  lipSync: (data: any): Promise<any> =>
+    request<any>('/pipeline/lip-sync', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    }),
 };
 
 export default api;

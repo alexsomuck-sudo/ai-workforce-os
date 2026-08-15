@@ -30,12 +30,14 @@ app.add_middleware(LoggingMiddleware)
 app.add_middleware(APIKeyMiddleware)
 setup_error_handlers(app)
 
-from app.routers import chat, health, agents, voice
+from app.routers import chat, health, agents, voice, pipeline, auth
 app.include_router(health.router)
 app.include_router(chat.router)
 app.include_router(agents.router)
 app.include_router(agents.director_router)
 app.include_router(voice.router)
+app.include_router(pipeline.router)
+app.include_router(auth.router)
 
 @app.get("/")
 async def root():

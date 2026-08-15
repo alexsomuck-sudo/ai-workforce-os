@@ -45,7 +45,8 @@ def test_provider(provider_name):
             return False
         
         print(f"✓ API Call Successful!")
-        print(f"  Response: {result.get('content', '').strip()}")
+        content = result.get('content') or ""
+        print(f"  Response: {content.strip()}")
         print(f"  Usage: {result.get('usage')}")
         return True
         

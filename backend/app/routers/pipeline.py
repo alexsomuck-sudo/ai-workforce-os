@@ -25,7 +25,7 @@ async def run_pipeline(request: PipelineRunRequest):
     try:
         from app.services.pipeline.movie_pipeline import MoviePipeline
         pipeline = MoviePipeline()
-        result = pipeline.run_episode(
+        result = pipeline.generate_episode(
             character=request.character,
             episode=request.episode,
             scene_index=request.scene_index,
@@ -61,9 +61,7 @@ async def lip_sync(request: LipSyncRequest):
     try:
         from app.services.lip_sync.lip_sync_service import LipSyncService
         service = LipSyncService()
-        result = service.generate(
-            character=request.character,
-            text=request.text,
+        result = service.generate_lip_sync(
             image_path=request.image_path,
             audio_path=request.audio_path,
         )

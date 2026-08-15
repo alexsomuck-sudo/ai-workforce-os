@@ -56,10 +56,10 @@ export default function Dashboard() {
 
       {/* Quick Stats */}
       <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem', marginTop: '1.5rem' }}>
-        <QuickCard title="AI Agents" value="2" subtitle="DirectorAI + Sales AI" />
-        <QuickCard title="API Endpoints" value="15+" subtitle="v1 API Available" />
-        <QuickCard title="LLM Providers" value="3" subtitle="OpenAI, Gemini, DeepSeek" />
-        <QuickCard title="TTS Providers" value="2" subtitle="OpenAI, Deepgram" />
+        <QuickCard title="Production Niche" value="FuturePulse AI" subtitle="Global Mystery & Wisdom" />
+        <QuickCard title="Auto-Post Status" value="Active" subtitle="4 Posts / Day" />
+        <QuickCard title="Connected Channel" value="@AI-Pro-Workflow" subtitle="YouTube Data API v3" />
+        <QuickCard title="Active Character" value="Aera" subtitle="AI Oracle / Future Guide" />
       </section>
 
       {/* System Info */}

@@ -61,3 +61,8 @@ frontend/dist/
 
 # Docker
 .docker/
+
+# YouTube API Secrets
+youtube_credentials.json
+youtube_token.json
+auth_output.txt

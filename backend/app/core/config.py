@@ -80,7 +80,7 @@ class Settings(BaseSettings):
     TTS_VOICE: str = Field(default="alloy", description="TTS voice")
     TTS_MODEL: str = Field(default="tts-1", description="TTS model")
     TTS_SPEED: float = Field(default=1.0, description="TTS playback speed")
-    TTS_LANGUAGE: str = Field(default="th", description="TTS language code")
+    TTS_LANGUAGE: str = Field(default="en-US", description="TTS language")
 
     # Deepgram TTS
     DEEPGRAM_API_KEY: str = Field(default="", description="Deepgram API key")
@@ -129,7 +129,7 @@ class Settings(BaseSettings):
     # Character Settings
     # ============================================
     CHARACTER_FILE: str = Field(
-        default="linhfeng.json", description="Default character file"
+        default="aera.json", description="Default character file"
     )
     WORLD_FILE: str = Field(default="ancient-world.json", description="Default world file")
 

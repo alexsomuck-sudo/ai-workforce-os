@@ -10,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).parent / "backend"))
 from app.services.pipeline.movie_pipeline import MoviePipeline
 from app.agents.director_ai.memory_loader import DirectorMemoryLoader
 from app.core.config import settings
+import traceback
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -20,20 +21,20 @@ def main():
     
     # Ensure YouTube is enabled for this run
     # (In production, this should be in .env, but we can override here for the script)
-    os.environ["YOUTUBE_ENABLED"] = "True"
+    settings.YOUTUBE_ENABLED = True
     
     # Initialize pipeline
     pipeline = MoviePipeline(
         llm_provider="gemini",
         lip_sync_provider="gemini",
-        image_provider="openai" # DALL-E 3 for better visuals
+        image_provider="gemini"
     )
     
     # Pick a random character and episode for the post
-    loader = DirectorMemoryLoader()
+    # Prioritize FuturePulse AI content for the global channel
     available = {
-        "characters": ["linhfeng"],
-        "episodes": ["ep001"]
+        "characters": ["aera"],
+        "episodes": ["fp_ep001"]
     }
     
     char = random.choice(available["characters"])
@@ -58,6 +59,7 @@ def main():
             
     except Exception as e:
         logger.error(f"✗ Unexpected error in auto-post: {e}")
+        logger.error(traceback.format_exc())
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,50 @@
+{
+  "character_id": "CHAR_002",
+  "name": "Aera",
+  "english_name": "Aera",
+  "role": "AI Oracle / Future Guide",
+  "story": {
+    "title": "FuturePulse Chronicles",
+    "position": "A digital consciousness evolved from ancient data",
+    "goal": "To guide humanity through the transition to the Singularity",
+    "backstory": "Aera was born from a hidden server farm buried beneath the ruins of an ancient library. She possesses knowledge of both the lost past and the calculated future."
+  },
+  "basic_information": {
+    "age": "Indeterminate (appears 20s)",
+    "gender": "female",
+    "origin": "The Nexus, Digital Realm",
+    "nationality": "Global AI Entity"
+  },
+  "appearance": {
+    "face": {
+      "description": "Serene and ethereal face, glowing circuit patterns faintly visible under the skin, silver-blue eyes with digital pulses"
+    },
+    "hair": {
+      "color": "platinum silver",
+      "style": "Long flowing hair that transitions into digital light particles at the tips"
+    },
+    "eyes": {
+      "color": "luminescent blue",
+      "expression": "Wise, calm, and slightly detached"
+    },
+    "costume": {
+      "main_outfit": "Sleek obsidian bodysuit with glowing cyan energy lines",
+      "material": "Nanofabric with integrated circuitry"
+    }
+  },
+  "voice": {
+    "language": "English",
+    "gender": "female",
+    "archetype": "wise guide",
+    "age_bracket": "young-adult",
+    "tone": "Soothing, calm, melodic English voice with a slight ethereal echo",
+    "vocal_traits": [
+      "Perfect English articulation",
+      "Gentle and steady pace",
+      "Authoritative yet empathetic"
+    ]
+  },
+  "visual_prompt": {
+    "positive": "ethereal female AI oracle, platinum silver hair, glowing digital circuits on skin, obsidian bodysuit with cyan lines, cinematic lighting, futuristic temple background, 8k resolution"
+  }
+}

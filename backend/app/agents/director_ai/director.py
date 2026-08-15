@@ -77,7 +77,7 @@ class DirectorAI:
     def list_available_content(self) -> Dict[str, Any]:
         """List available characters, worlds, and episodes."""
         return {
-            "characters": ["linhfeng"],
+            "characters": ["linhfeng", "aera"],
             "worlds": ["ancient-world"],
-            "episodes": ["ep001"],
+            "episodes": ["ep001", "fp_ep001"],
         }

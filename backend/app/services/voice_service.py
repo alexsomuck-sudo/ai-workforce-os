@@ -133,8 +133,11 @@ class VoiceService:
         """
         gender = character_voice_data.get("gender", "female").lower()
         age = character_voice_data.get("age", "young").lower()
+        archetype = character_voice_data.get("archetype", "").lower()
         
         if provider == "openai":
+            if archetype == "wise guide":
+                return "shimmer" # Calm and melodic
             if gender == "male":
                 return "onyx" if age == "old" else "echo"
             else:
