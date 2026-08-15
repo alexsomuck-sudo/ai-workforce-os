@@ -89,6 +89,14 @@ class GeminiClient:
                 "max_output_tokens": max_tokens,
             }
             
+            # Disable safety filters to prevent blocks
+            safety_settings = [
+                {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
+                {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
+                {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
+                {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"},
+            ]
+            
             current_model = self.model
             if model and model != self.model_name:
                 current_model = genai.GenerativeModel(model)
@@ -100,6 +108,7 @@ class GeminiClient:
             response = current_model.generate_content(
                 full_prompt,
                 generation_config=generation_config,
+                safety_settings=safety_settings,
             )
             
             if not response or not response.candidates:
@@ -113,12 +122,25 @@ class GeminiClient:
             try:
                 content = response.text
             except ValueError as ve:
-                return {
-                    "content": "",
-                    "usage": {},
-                    "error": "safety_block",
-                    "detail": str(ve),
-                }
+                # If safety block, try to get whatever is available
+                if response.candidates and len(response.candidates) > 0:
+                    candidate = response.candidates[0]
+                    if candidate.content and candidate.content.parts:
+                        content = candidate.content.parts[0].text
+                    else:
+                        return {
+                            "content": "",
+                            "usage": {},
+                            "error": "safety_block",
+                            "detail": str(ve),
+                        }
+                else:
+                    return {
+                        "content": "",
+                        "usage": {},
+                        "error": "safety_block",
+                        "detail": str(ve),
+                    }
             
             usage = {}
             if hasattr(response, 'usage_metadata') and response.usage_metadata:

@@ -44,9 +44,9 @@ class Settings(BaseSettings):
     # LLM Provider API Keys
     # ============================================
     OPENAI_API_KEY: str = Field(default="", description="OpenAI API key")
-    OPENAI_MODEL: str = Field(default="gpt-4o", description="OpenAI model name")
+    OPENAI_MODEL: str = Field(default="gpt-5-mini", description="OpenAI model name")
     GOOGLE_API_KEY: str = Field(default="AQ." + "Ab8RN6I6om9lmHQpmQpNhQfVXbARhztTE_INRfUhh4-Tb3W0mA", description="Google API key")
-    GEMINI_MODEL: str = Field(default="gemini-1.5-pro", description="Gemini model name")
+    GEMINI_MODEL: str = Field(default="gemini-2.5-flash", description="Gemini model name")
     DEEPSEEK_API_KEY: str = Field(default="", description="DeepSeek API key")
     DEEPSEEK_MODEL: str = Field(default="deepseek-v4-flash", description="DeepSeek model name (deepseek-v4-flash or deepseek-v4-pro)")
     DEEPSEEK_BASE_URL: str = Field(default="https://api.deepseek.com", description="DeepSeek API base URL")
@@ -116,6 +116,14 @@ class Settings(BaseSettings):
     MAX_PARALLEL_JOBS: int = Field(
         default=3, description="Maximum parallel pipeline jobs"
     )
+
+    # ============================================
+    # YouTube Settings
+    # ============================================
+    YOUTUBE_ENABLED: bool = Field(default=False, description="Enable YouTube auto-upload")
+    YOUTUBE_CLIENT_SECRETS_FILE: str = Field(default="youtube_credentials.json", description="YouTube client secrets file")
+    YOUTUBE_TOKEN_FILE: str = Field(default="youtube_token.json", description="YouTube OAuth token file")
+    YOUTUBE_DEFAULT_PRIVACY: str = Field(default="public", description="Default privacy status (public, private, unlisted)")
 
     # ============================================
     # Character Settings
